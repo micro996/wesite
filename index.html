@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Multimedia Player</h1>
+</header>
+
+<section id="media">
+    <h2>Video Section</h2>
+    <video id="video" width="600" controls onclick="pauseOther('video')">
+        <source src="video2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h2>Music Section</h2>
+    <audio id="audio" controls onclick="pauseOther('audio')">
+        <source src="music2.mp3" type="audio/mp3">
+    </music>
+</section>
+
+<script>
+    const video = document.getElementById('video');
+    const music= document.getElementById('music');
+
+    video.addEventListener('play', () => {
+        if (music.paused) {
+            music.pause();
+        }
+    });
+
+    music.addEventListener('play', () => {
+        if (video.paused) {
+            video.pause();
+        }
+    });
+</script>
+
+</body>
+</html>
